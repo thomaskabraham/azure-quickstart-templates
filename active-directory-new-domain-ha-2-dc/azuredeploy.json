@@ -61,10 +61,22 @@
         "description": "vName of the existing virtual network to deploy the scale set into."
       }
     },
+    "existingVnetRange": {
+      "type": "string",
+      "metadata": {
+        "description": "Range of the existing virtual network to deploy the scale set into."
+      }
+    },
     "existingSubnetName": {
       "type": "string",
       "metadata": {
         "description": "Name of the existing subnet to deploy the scale set into."
+      }
+    },
+    "existingSubnetRange": {
+      "type": "string",
+      "metadata": {
+        "description": "Range of the existing subnet to deploy the scale set into."
       }
     }  
   },
