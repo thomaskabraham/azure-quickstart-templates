@@ -103,7 +103,7 @@
     "adPDCNicIPAddress": "10.0.0.4",
     "adBDCNicName": "adBDCNic",
     "adBDCNicIPAddress": "10.0.0.5",
-    "adSubnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('adSubnetName'))]",
+    "adSubnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('existingVnetName'), parameters('existingSubnetName'))]",
     "adLBName": "adLoadBalancer",
     "adlbID": "[resourceId('Microsoft.Network/loadBalancers',variables('adLBName'))]",
     "adlbFEConfigID": "[concat(variables('adlbID'),'/frontendIPConfigurations/',variables('adLBFE'))]",
@@ -165,16 +165,16 @@
         },
         "parameters": {
           "virtualNetworkName": {
-            "value": "[variables('virtualNetworkName')]"
+            "value": "[parameters('existingVnetName')]"
           },
           "virtualNetworkAddressRange": {
-            "value": "[variables('virtualNetworkAddressRange')]"
+            "value": "[parameters('existingVnetRange')]"
           },
           "subnetName": {
-            "value": "[variables('adSubnetName')]"
+            "value": "[parameters('existingSubnetName')]"
           },
           "subnetRange": {
-            "value": "[variables('adSubnet')]"
+            "value": "[parameters('existingSubnetRange')]"
           }
         }
       }
@@ -407,16 +407,16 @@
         },
         "parameters": {
           "virtualNetworkName": {
-            "value": "[variables('virtualNetworkName')]"
+            "value": "[parameters('existingVnetName')]"
           },
           "virtualNetworkAddressRange": {
-            "value": "[variables('virtualNetworkAddressRange')]"
+            "value": "[parameters('existingVnetRange')]"
           },
           "subnetName": {
-            "value": "[variables('adSubnetName')]"
+            "value": "[parameters('existingSubnetName')]"
           },
           "subnetRange": {
-            "value": "[variables('adSubnet')]"
+            "value": "[parameters('existingSubnetRange')]"
           },
           "DNSServerAddress": {
             "value": [
@@ -612,16 +612,16 @@
         },
         "parameters": {
           "virtualNetworkName": {
-            "value": "[variables('virtualNetworkName')]"
+            "value": "[parameters('existingVnetName')]"
           },
           "virtualNetworkAddressRange": {
-            "value": "[variables('virtualNetworkAddressRange')]"
+            "value": "[parameters('existingVnetRange')]"
           },
           "subnetName": {
-            "value": "[variables('adSubnetName')]"
+            "value": "[parameters('existingSubnetName')]"
           },
           "subnetRange": {
-            "value": "[variables('adSubnet')]"
+            "value": "[parameters('existingSubnetRange')]"
           },
           "DNSServerAddress": {
             "value": [
